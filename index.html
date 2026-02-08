@@ -1,0 +1,104 @@
+<link rel="stylesheet" href="css/style.css">
+<body>
+<nav class="navbar">
+  <div class="logo">My Resto</div>
+  <ul class="nav-links">
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#order">Order</a></li>
+  </ul>
+</nav>
+  <h1>My Restaurant</h1>
+  <p>Fresh & Delicious Food Made With Love</p>
+
+  <h2>Menu</h2>
+  <ul>
+    <li>Burger – $5</li>
+    <li>Pizza – $8</li>
+    <li>Fried Chicken – $6</li>
+    <li>Salad – $4</li>
+  </ul>
+<a href="https://wa.me/251995530570?text=ሰላም%20ምግብ%20ማዘዝ%20ፈልጌ%20ነበር" target="_blank" style="text-decoration: none;">
+  <button type="button" class="whatsapp-btn">
+    Order on WhatsApp
+  </button>
+</a>
+
+<h2>Gallery</h2>
+  <div class="gallery">
+    
+    <div class="food-item">
+      <img src="Image/Food1.jpg" alt="Food 1" width="200">
+      <p>Special Dish 1</p>
+    </div>
+
+    <div class="food-item">
+      <img src="Image/Food2jpgg" alt="Food 2" width="200">
+      <p>Special Dish 2</p>
+    </div>
+
+    <div class="food-item">
+      <img src="Image/Food3.jpg" alt="Food 3" width="200">
+      <p>Special Dish 3</p>
+    </div>
+
+    <div class="food-item">
+      <img src="Image/Food4.jpg" alt="Food 4" width="200">
+      <p>Special Dish 4</p>
+    </div>
+
+  </div>
+  
+
+  </div>
+
+  <h2>Order Food</h2>
+  <form>
+    <input type="text" placeholder="Your Name"><br>
+    <input type="text" placeholder="Food Name"><br>
+    <input type="text" placeholder="Your Address">
+    <button type="submit">Place Order</button>
+  </form>
+  <footer id="contact">
+  <div class="footer-content">
+    <h3>My Resto</h3>
+    <p>ትክክለኛውን የሀገራችንን ጣዕም በቤታችን ያግኙ።</p>
+    <div class="contact-info">
+      <p>📍 አድራሻ፡አርባ ምንጭ፣ ኢትዮጵያ</p>
+      <p>📞 ስልክ፡ +251 99 553 0570</p>
+    </div>
+    <div class="social-icons">
+      <span>Facebook</span> | <span>Telegram</span> | <span>TikTok</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 My Restaurant | All Rights Reserved</p>
+  </div>
+</footer>
+<script>
+function sendOrder() {
+  // በቅጹ ውስጥ የተጻፉትን መረጃዎች መውሰድ
+  let name = document.querySelector('input[placeholder="Your Name"]').value;
+  let food = document.querySelector('input[placeholder="Food Name"]').value;
+  let address = document.querySelector('input[placeholder="Your Address"]').value;
+
+  // መረጃው ካልተሞላ ማስጠንቀቂያ ለመስጠት
+  if(name == "" || food == "" || address == "") {
+    alert("እባክዎ ሁሉንም መረጃዎች ይሙሉ!");
+    return;
+  }
+
+  // ወደ WhatsApp የሚላከው መልዕክት አደራጃጀት
+  let message = "ሰላም! አዲስ ትዕዛዝ አለኝ፦" + "%0A" +
+                "👤 ስም፦ " + name + "%0A" +
+                "🍔 ምግብ፦ " + food + "%0A" +
+                "📍 አድራሻ፦ " + address;
+
+  // የ WhatsApp ሊንክ (የአንተ ስልክ ቁጥር ተጨምሮበት)
+  let whatsappUrl = "https://wa.me/251995530570?text=" + message;
+
+  // WhatsApp-ን በአዲስ ታብ መክፈት
+  window.open(whatsappUrl, '_blank');
+}
+</script>
+</body>
